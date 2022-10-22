@@ -1,0 +1,66 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/general_header">
+
+        <SwitchPreferenceCompat
+            app:key="active"
+            app:summaryOff="@string/general_off"
+            app:summaryOn="@string/general_on"
+            app:title="@string/general_title"
+            app:dependency="iobroker_ip"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/connection_header">
+
+        <EditTextPreference
+            app:key="wifi_name"
+            app:title="@string/wifi_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="iobroker_ip"
+            app:title="@string/ipAddress_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="iobroker_port"
+            app:defaultValue="8087"
+            app:title="@string/port_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <CheckBoxPreference
+            app:key="wifi_only_home"
+            app:defaultValue="true"
+            app:title="@string/wificheck_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/datapoint_header">
+
+        <EditTextPreference
+            app:dependency="iobroker_expert"
+            app:key="iobroker_adapter"
+            app:title="@string/adapter_title"
+            app:defaultValue="0_userdata.0"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="iobroker_path"
+            app:title="@string/path_title"
+            app:defaultValue="example_state"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/expert_header">
+
+        <SwitchPreferenceCompat
+            app:key="iobroker_expert"
+            app:summaryOff="@string/expert_off"
+            app:summaryOn="@string/expoert_on"
+            app:title="@string/expert_title" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

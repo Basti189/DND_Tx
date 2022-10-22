@@ -21,13 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-        // Check if the notification policy access has been granted for the app.
-        if (!mNotificationManager.isNotificationPolicyAccessGranted()) {
-            Intent intent = new Intent(android.provider.Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS);
-            startActivity(intent);
-        }
 
         String name = Settings.System.getString(getContentResolver(), "device_name");
         Toast.makeText(this, "Name: " + name, Toast.LENGTH_SHORT).show();

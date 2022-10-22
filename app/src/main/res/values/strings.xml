@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">DND Tx</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="general_header">Allgemein</string>
+    <string name="connection_header">Verbindung</string>
+    <string name="datapoint_header">Datenpunkt</string>
+    <string name="expert_header">Expertenmodus</string>
+
+    <!-- Sync Preferences -->
+    <string name="general_title">DND Status</string>
+    <string name="general_on">Wird an ioBroker übermittelt</string>
+    <string name="general_off">Wird nicht an ioBroker übermittelt</string>
+
+    <string name="wifi_title">SSID des Heimnetzes</string>
+    <string name="ipAddress_title">ioBroker IP-Adresse</string>
+    <string name="port_title">Simple-API Port</string>
+    <string name="wificheck_title">Status nur im Heimnetz übertragen</string>
+
+    <string name="adapter_title">Adapter</string>
+    <string name="path_title">Pfad</string>
+
+    <string name="expert_title">Modus</string>
+    <string name="expoert_on">Im Expertenmodus können Sie Datenpunkte jedes Adapters beschreiben. Bitte stellen Sie sicher, dass Sie wissen, was Sie tun!</string>
+    <string name="expert_off">Aus</string>
+
 </resources>
