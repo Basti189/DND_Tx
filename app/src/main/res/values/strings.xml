@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DND Tx</string>
+    <string name="app_name">IO Tx</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
@@ -13,13 +13,21 @@
     <string name="general_on">Wird an ioBroker übermittelt</string>
     <string name="general_off">Wird nicht an ioBroker übermittelt</string>
 
+    <string name="alarm_title">Wecker klingelt</string>
+    <string name="alarm_on">Wird an ioBroker übermittelt</string>
+    <string name="alarm_off">Wird nicht an ioBroker übermittelt</string>
+
     <string name="wifi_title">SSID des Heimnetzes</string>
     <string name="ipAddress_title">ioBroker IP-Adresse</string>
     <string name="port_title">Simple-API Port</string>
     <string name="wificheck_title">Status nur im Heimnetz übertragen</string>
 
     <string name="adapter_title">Adapter</string>
-    <string name="path_title">Pfad</string>
+    <string name="dnd_path_title">DND Pfad</string>
+    <string name="alarm_path_title">Wecker Pfad</string>
+    <string name="alarm_status_title">Sendeverhalten</string>
+    <string name="alarm_status_on">Sende true/false</string>
+    <string name="alarm_status_off">Sende nur true</string>
 
     <string name="expert_title">Modus</string>
     <string name="expoert_on">Im Expertenmodus können Sie Datenpunkte jedes Adapters beschreiben. Bitte stellen Sie sicher, dass Sie wissen, was Sie tun!</string>

@@ -3,10 +3,17 @@
     <PreferenceCategory app:title="@string/general_header">
 
         <SwitchPreferenceCompat
-            app:key="active"
+            app:key="dnd_active"
             app:summaryOff="@string/general_off"
             app:summaryOn="@string/general_on"
             app:title="@string/general_title"
+            app:dependency="iobroker_ip"/>
+
+        <SwitchPreferenceCompat
+            app:key="alarm_active"
+            app:summaryOff="@string/alarm_off"
+            app:summaryOn="@string/alarm_on"
+            app:title="@string/alarm_title"
             app:dependency="iobroker_ip"/>
 
     </PreferenceCategory>
@@ -46,10 +53,22 @@
             app:useSimpleSummaryProvider="true" />
 
         <EditTextPreference
-            app:key="iobroker_path"
-            app:title="@string/path_title"
+            app:key="iobroker_dnd_path"
+            app:title="@string/dnd_path_title"
             app:defaultValue="example_state"
             app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="iobroker_alarm_path"
+            app:title="@string/alarm_path_title"
+            app:defaultValue="example_state"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            app:key="iobroker_alarm_truefalse"
+            app:summaryOff="@string/alarm_status_off"
+            app:summaryOn="@string/alarm_status_on"
+            app:title="@string/alarm_status_title" />
 
     </PreferenceCategory>
 

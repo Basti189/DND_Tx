@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
@@ -24,15 +23,15 @@ public class InterruptionFilterReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         if(intent.getAction().equals(NotificationManager.ACTION_INTERRUPTION_FILTER_CHANGED)) {
             NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-            boolean notification;
+            boolean doNotDisturb;
             if (mNotificationManager.getCurrentInterruptionFilter() == NotificationManager.INTERRUPTION_FILTER_ALL) {
-                notification = true;
+                doNotDisturb = false;
             } else {
-                notification = false;
+                doNotDisturb = true;
             }
 
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-            if (!prefs.getBoolean("active", false)) {
+            if (!prefs.getBoolean("dnd_active", false)) {
                 return;
             }
 
@@ -47,14 +46,14 @@ public class InterruptionFilterReceiver extends BroadcastReceiver {
             String address = prefs.getString("iobroker_ip", "");
             String port = prefs.getString("iobroker_port", "");
             String adapter = prefs.getString("iobroker_adapter", "");
-            String path = prefs.getString("iobroker_path", "");
+            String path = prefs.getString("iobroker_dnd_path", "");
 
             if (address.isEmpty() || port.isEmpty() || adapter.isEmpty() || path.isEmpty()) {
                 return;
             }
 
             RequestQueue queue = Volley.newRequestQueue(context);
-            String url = address + ":" + port + "/set/" + adapter + "." + path + "?value=" + String.valueOf(notification);
+            String url = address + ":" + port + "/set/" + adapter + "." + path + "?value=" + String.valueOf(doNotDisturb);
             StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                     response -> {
                     }, error -> {
